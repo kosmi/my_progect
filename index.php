@@ -47,7 +47,7 @@ include_once ("pages/functions.php");
 	<div class="travel-roww row">
 		<p class="travel-tagline">Travel around the world!</p>
 	</div>
-	<div class="conteiner row travel-image git">
+	<div class="conteiner row travel-image">
 		<div class="img-thumbnail"></div>
 	</div>		
 
