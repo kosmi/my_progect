@@ -1,7 +1,7 @@
 <h1>Register</h1>
 <?php 	
 if (isset($_POST['adduser'])) {
-	if(register($_POST['login1'],$_POST['pass1'], $_POST['email'], $GLOBALS['avatar'])) {
+	if(register($_POST['login1'],$_POST['pass1'], $_POST['email'], $_FILES['avatar']['tmp_name'])) {
 		echo '<h3 style="color:green">Registration is successful</h3>';
 	}
 

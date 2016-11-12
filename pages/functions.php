@@ -15,7 +15,7 @@ function register($name, $pass, $email, $image) {
 	$pass=trim(htmlspecialchars($pass));
 	$email=trim(htmlspecialchars($email));
 	$file=fopen($image,'rb'); // читаем содержимое файла
-	$binary=fread($file, filesize($image) );
+	$binary=addslashes($binary);
 	fclose($file);
 
 if($name == "" || $pass == "" || $email == "") {
