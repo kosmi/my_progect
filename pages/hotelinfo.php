@@ -83,6 +83,13 @@ include_once ("functions.php");
 		 		<button class="reserve">Reserve</button>
 		 	</div>
 		 </div>
+		 <div class="info rew col-lg-12  col-md-12 col-sm-12 col-xs-12">
+		 <h2 class="info_fonts">Comments</h2>
+		 	<?php 
+		 	connect();
+		 	getComments(4);
+		 	 ?>
+		 </div>
 		</section>
 		</div>
 		<footer class="travel-menu navbar navbar-inverse"><p><span class="logo-travel">Map</span> Travel  <br><span class="my-name">by Anastasiya Kosmina</span></p></footer>

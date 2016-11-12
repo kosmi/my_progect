@@ -210,6 +210,9 @@ footer.navbar {
 .reserve:active {
 	box-shadow: #734d04 0px 0px 9px inset;
 }
+.rew {
+	margin-top: 20px;
+}
 
 
 
