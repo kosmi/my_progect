@@ -10,10 +10,13 @@ function connect(){
 	mysql_select_db($dbname) or die('DB error');
 	mysql_query("set names 'utf8'");
 }
-function register($name, $pass, $email) {
+function register($name, $pass, $email, $image) {
 	$name=trim(htmlspecialchars($name));
 	$pass=trim(htmlspecialchars($pass));
 	$email=trim(htmlspecialchars($email));
+	$file=fopen($image,'rb'); // читаем содержимое файла
+	$binary=fread($file, filesize($image) );
+	fclose($file);
 
 if($name == "" || $pass == "" || $email == "") {
 	echo '<h3 style="color:red">The field is not filled<h3>';
@@ -27,7 +30,7 @@ if(strlen($pass)<3 || strlen($pass)>30 ) {
 	echo '<h3 style="color:red">Incorrect length password<h3>';
 	return false;
 }
-$ins = 'INSERT INTO users (login, pass, email, roleid) VALUES ("'.$name.'","'.md5($pass).'","'.$email.'",2)';
+$ins = 'INSERT INTO users (login, pass, email, roleid, avatar) VALUES ("'.$name.'","'.md5($pass).'","'.$email.'",2'.$binary.')';
 connect();
 mysql_query($ins);
 return true;

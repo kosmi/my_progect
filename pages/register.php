@@ -1,14 +1,14 @@
 <h1>Register</h1>
 <?php 	
 if (isset($_POST['adduser'])) {
-	if(register($_POST['login1'],$_POST['pass1'], $_POST['email'])) {
+	if(register($_POST['login1'],$_POST['pass1'], $_POST['email'], $GLOBALS['avatar'])) {
 		echo '<h3 style="color:green">Registration is successful</h3>';
 	}
 
  }
  else {
  	?>
- 	<form action="index.php?page=4" method="post">
+ 	<form action="index.php?page=4" method="post" enctype="multipart/form-data">
  		<div class="form-group">
  			<label for="login1">Login</label>
  			<input type="text" name="login1" placeholder="Login" class="form-control">
@@ -25,6 +25,7 @@ if (isset($_POST['adduser'])) {
  			<label for="email">Email</label>
  			<input type="text" name="email" placeholder="email" class="form-control">
  		</div>
+ 		<input type="file" name="avatar"><br>
  		<button type="submit" class="btn btn-primary" name="adduser">Register</button>
  	</form>
  <?php 	
